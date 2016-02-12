@@ -43,6 +43,8 @@ Create an account at https://www.openshift.com
 Install the RHC client tools if you have not already done so:
     
     sudo gem install rhc
+    or
+    sudo apt-get install rhc
     rhc setup
 
 Select the version of python (2.7 or 3.3) and create a application
