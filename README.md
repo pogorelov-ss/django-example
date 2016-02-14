@@ -43,16 +43,24 @@ Create an account at https://www.openshift.com
 Install the RHC client tools if you have not already done so:
     
     sudo gem install rhc
+    or
+    sudo apt-get install rhc
     rhc setup
+
+(sometimes 'rhc setup' works strange way on ubuntu....steps: press ENTER, email, password, 'yes')
 
 Select the version of python (2.7 or 3.3) and create a application
 
     rhc app create django python-$VERSION
 
+Add postgresql cartridge
+
+    rhc add-cartridge postgresql-9.2
+    
 Add this upstream repo
 
     cd django
-    git remote add upstream -m master git://github.com/openshift/django-example.git
+    git remote add upstream -m master git@github.com:pogorelov-ss/django-openshift-postgre-example.git
     git pull -s recursive -X theirs upstream master
 
 Then push the repo upstream
